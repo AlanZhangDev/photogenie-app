@@ -2,7 +2,7 @@ const FilmBox = ({ name, image, cost, year}) => {
     return (
         <div className="card-box">
             <div className="film-item">
-                <img src={image} />
+                <img src={image} alt={`Poster of "${name}" (${year})`} className="poster-image"/>
                 <div className="film-info">
                     <h2 className="film-title">{name}</h2>
                     <p className="film-cost">${cost}</p>

@@ -4,7 +4,7 @@ import FilmGrid from "./components/FilmGrid";
 
 function App() {
   return (
-    <div className="App">
+    <div className="content">
         <AddForm />
         <FilmGrid />
     </div>

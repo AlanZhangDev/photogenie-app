@@ -131,3 +131,125 @@ input {
     flex-direction: column;
 }
 
+.delete-film-button,
+.delete-all-button {
+    background-color:tomato;
+    margin: 5rem;
+}
+
+.delete-film-button:hover,
+.delete-all-button:hover {
+    background-color:red;
+    cursor: pointer;
+}
+
+.delete-film-button,
+.add-film-modal-button,
+.delete-all-button,
+.clear-inputs-button,
+.add-film-button {
+    font-family: 'Montserrat', 'Helvetica neue', Helvetica, sans-serif;
+    font-weight: 300;
+    align-self: center;
+    border-width: 0;
+    padding: 0.625rem 0.875rem 0.625rem 0.875rem;
+}
+
+.delete-film-button {
+    margin: 2rem 0 0 0;
+}
+
+.add-film-modal-button,
+.clear-inputs-button,
+.add-film-button {
+    background-color:#d4d4d8;
+}
+
+.add-film-modal-button:hover,
+.clear-inputs-button:hover,
+.add-film-button:hover {
+    background-color:#a1a1aa;
+    cursor: pointer;
+}
+
+.film-info-modal,
+.add-film-modal {
+    border: 0;
+    box-shadow: 0px 0px 2px 2px #a1a1aa;
+    min-width: 50%;
+    position: fixed;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 767px) {
+    .add-film-modal {
+        min-width: 90%;
+    }
+}
+
+dialog::backdrop {
+    background-color: #F6F4F3;
+    opacity: 0.6;
+}
+
+.add-film-form-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.total-films {
+    font-family: 'Montserrat', 'Helvetica neue', Helvetica, sans-serif;
+    font-weight: 300;
+    margin: 0 0.875rem 0 0.875rem;
+}
+
+.film-info-modal {
+    cursor: default;
+    font-family: 'Courier New', Courier, monospace;
+    max-width: 50%;
+    padding: 2.5%;
+}
+
+.close-button {
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border-style: none;
+    padding: 3px 5px 3px 5px;
+    transition: background-color 0.4s;
+}
+
+.close-button:hover {
+    background-color:#d4d4d8;
+}
+
+.film-info-modal-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-paragraph {
+    font-family: 'Courier New', Courier, monospace;
+    align-self: center;
+    margin: 1rem 5rem 1rem 5rem;
+}
+
+textarea,
+input {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.film-modal-title {
+    font-family: 'Playfair Display', serif;
+}
+
+.film-modal-year {
+    font-weight: 300;
+    font-size: 1.25rem;
+}
+

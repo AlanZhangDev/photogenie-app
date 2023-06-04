@@ -13,9 +13,16 @@ const filmsSlice = createSlice({
     reducers: {
         addFilm: (state, { payload }) => {
             state.films = [...state.films, payload]
+        },
+        deleteAll: (state) => {
+            state.films = []
+        },
+        deleteFilm: (state, { payload }) => {
+            const array = state.films.filter(film => film.name !== payload);
+            state.films = array;
         }
     }
 });
 
-export const { addFilm } = filmsSlice.actions;
+export const { addFilm, deleteAll, deleteFilm } = filmsSlice.actions;
 export default filmsSlice.reducer;

@@ -20,7 +20,6 @@ const AddForm = () => {
             image: image,
             description: description,
         }
-        console.log(film);
 
         dispatch(addFilm(film));
     }

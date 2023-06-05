@@ -10,6 +10,23 @@ html {
   box-sizing: inherit;
 }
 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #a1a1aa;
+}
+
+.navitem {
+    padding-left: 1.875rem;
+    padding-right: 1.875rem;
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+    color: #F6F4F3;
+    text-decoration: none;
+    font-family: 'Helvetica neue', Helvetica, sans-serif;
+    font-weight: 300;
+}
+
 body {
     margin: 0px;
     background-color: #F6F4F3;

@@ -15,7 +15,7 @@ const FilmInfo = ({ name, year, cost, description, onClose}) => {
                 <h2 className="film-modal-title">{name} <span className="film-modal-year">({year})</span></h2>
                 <p>{description}</p>
                 <p>$ {cost}</p>
-                <button onClick={removeFilm} class="delete-film-button">Delete</button>
+                <button onClick={removeFilm} className="delete-film-button">Delete</button>
             </div>
         </dialog>
     );

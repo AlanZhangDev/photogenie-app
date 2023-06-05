@@ -3,7 +3,7 @@ import films from "../data/films";
 
 const initialState = {
     films: films,
-    amount: 0,
+    amount: 12,
     isLoading: true,
 };
 
@@ -13,13 +13,16 @@ const filmsSlice = createSlice({
     reducers: {
         addFilm: (state, { payload }) => {
             state.films = [...state.films, payload]
+            state.amount += 1
         },
         deleteAll: (state) => {
             state.films = []
+            state.amount = 0;
         },
         deleteFilm: (state, { payload }) => {
             const array = state.films.filter(film => film.name !== payload);
             state.films = array;
+            state.amount -= 1;
         }
     }
 });

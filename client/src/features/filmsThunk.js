@@ -1,3 +1,4 @@
+// filmsThunk and filmsSlice functionality adapted from express.js lecture
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import FilmService from './service'
 
@@ -19,5 +20,19 @@ export const deleteFilmAsync = createAsyncThunk(
     'DELETE_FILM',
     async (id) => {
         return await FilmService.deleteFilm(id)
+    }
+)
+
+export const getFilmsSortedAsync = createAsyncThunk(
+    'GET_SORTED_FILMS',
+    async (sortType) => {
+        return await FilmService.getSortFilms(sortType)
+    }
+)
+
+export const patchFilmPriceAsync = createAsyncThunk(
+    'PUT_FILM_PRICE',
+    async (id) => {
+        return await FilmService.patchFilmPrice(id)
     }
 )

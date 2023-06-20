@@ -3,7 +3,6 @@ import { useState } from "react";
 import { createPortal } from "react-dom";
 
 const FilmBox = ({ id, name, image, cost, year, description }) => {
-
     const [showModal, setShowModal] = useState(false);
 
     return (

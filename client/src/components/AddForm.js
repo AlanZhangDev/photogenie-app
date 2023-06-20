@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { postFilmAsync } from "../features/filmsThunk";
+import { getFilmsSortedAsync, postFilmAsync } from "../features/filmsThunk";
 import { v4 as uuidv4 } from "uuid";
 
 const AddForm = () => {
@@ -24,6 +24,10 @@ const AddForm = () => {
         }
 
         dispatch(postFilmAsync(film));
+    }
+
+    const handleSort = (sortType) => {
+        dispatch(getFilmsSortedAsync(sortType))
     }
 
     return (
@@ -56,6 +60,14 @@ const AddForm = () => {
                         setImage("");
                         setDescription("");
                     }} type="button" className="clear-inputs-button">Clear</button>
+                </div>
+                <br></br>
+                <h1 className="add-film-header">Sort Films</h1>
+                <div className="add-film-form-buttons">
+                    <button type="button" onClick={() => handleSort("title-ascending")} className="sort-by-button">Sort by Title (A-Z)</button>
+                    <button type="button" onClick={() => handleSort("title-descending")} className="sort-by-button">Sort by Title (Z-A)</button>
+                    <button type="button" onClick={() => handleSort("price-ascending")} className="sort-by-button">Sort by Price ($-$$$)</button>
+                    <button type="button" onClick={() => handleSort("price-descending")} className="sort-by-button">Sort by Title ($$$-$)</button>
                 </div>
             </form>
         </div>

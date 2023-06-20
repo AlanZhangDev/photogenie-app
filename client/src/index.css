@@ -164,7 +164,9 @@ input {
 .add-film-modal-button,
 .delete-all-button,
 .clear-inputs-button,
-.add-film-button {
+.add-film-button,
+.sort-by-button,
+.edit-film-button {
     font-family: 'Montserrat', 'Helvetica neue', Helvetica, sans-serif;
     font-weight: 300;
     align-self: center;
@@ -172,20 +174,32 @@ input {
     padding: 0.625rem 0.875rem 0.625rem 0.875rem;
 }
 
-.delete-film-button {
+.delete-film-button,
+.edit-film-button {
     margin: 2rem 0 0 0;
 }
 
 .add-film-modal-button,
 .clear-inputs-button,
-.add-film-button {
+.add-film-button,
+.sort-by-button {
     background-color:#d4d4d8;
 }
 
 .add-film-modal-button:hover,
 .clear-inputs-button:hover,
-.add-film-button:hover {
+.add-film-button:hover,
+.sort-by-button:hover {
     background-color:#a1a1aa;
+    cursor: pointer;
+}
+
+.edit-film-button {
+    background-color: lightblue;
+}
+
+.edit-film-button:hover {
+    background-color: deepskyblue;
     cursor: pointer;
 }
 

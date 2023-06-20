@@ -1,11 +1,11 @@
 import { useDispatch } from "react-redux";
-import { deleteFilm } from "../features/filmsSlice";
+import { deleteFilmAsync } from "../features/filmsThunk";
 
-const FilmInfo = ({ name, year, cost, description, onClose}) => {
+const FilmInfo = ({ id, name, year, cost, description, onClose}) => {
     const dispatch = useDispatch();
 
     const removeFilm = () => {
-        dispatch(deleteFilm(name));
+        dispatch(deleteFilmAsync(id));
     }
 
     return (

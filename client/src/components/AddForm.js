@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addFilm } from "../features/filmsSlice";
+import { postFilmAsync } from "../features/filmsThunk";
+import { v4 as uuidv4 } from "uuid";
 
 const AddForm = () => {
     const dispatch = useDispatch();
@@ -14,6 +15,7 @@ const AddForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const film = {
+            id: uuidv4(),
             name: title,
             year: Number(year),
             cost: Number(cost),
@@ -21,7 +23,7 @@ const AddForm = () => {
             description: description,
         }
 
-        dispatch(addFilm(film));
+        dispatch(postFilmAsync(film));
     }
 
     return (

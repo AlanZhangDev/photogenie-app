@@ -2,8 +2,9 @@ import FilmInfo from "./FilmInfo";
 import { useState } from "react";
 import { createPortal } from "react-dom";
 
-const FilmBox = ({ name, image, cost, year, description}) => {
-    const [showModal, setShowModal] = useState(false)
+const FilmBox = ({ id, name, image, cost, year, description }) => {
+
+    const [showModal, setShowModal] = useState(false);
 
     return (
         <>
@@ -18,7 +19,7 @@ const FilmBox = ({ name, image, cost, year, description}) => {
                 </div>
             </div>
             {showModal && createPortal(
-                <FilmInfo name={name} year={year} cost={cost} description={description} onClose={() => setShowModal(false)} />,
+                <FilmInfo id={id} name={name} year={year} cost={cost} description={description} onClose={() => setShowModal(false)} />,
                 document.body
             )}
         </>

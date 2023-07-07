@@ -1,15 +1,15 @@
 import { useDispatch } from "react-redux";
 import { deleteFilmAsync, patchFilmPriceAsync } from "../features/filmsThunk";
 
-const FilmInfo = ({ id, name, year, cost, description, onClose}) => {
+const FilmInfo = ({ _id, name, year, cost, description, onClose}) => {
     const dispatch = useDispatch();
 
     const removeFilm = () => {
-        dispatch(deleteFilmAsync(id));
+        dispatch(deleteFilmAsync(_id));
     }
 
     const editFilm = () => {
-        dispatch(patchFilmPriceAsync(id));
+        dispatch(patchFilmPriceAsync(_id));
     }
 
     return (

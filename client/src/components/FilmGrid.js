@@ -14,7 +14,7 @@ const FilmGrid = () => {
     return (
         <div className="film-list">
             {films.map((film) => {
-                return <FilmBox key={film.id} {...film} />;
+                return <FilmBox key={film._id} {...film} />;
             })}
         </div>
     );

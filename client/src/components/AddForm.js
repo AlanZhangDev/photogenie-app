@@ -15,7 +15,6 @@ const AddForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const film = {
-            id: uuidv4(),
             name: title,
             year: Number(year),
             cost: Number(cost),

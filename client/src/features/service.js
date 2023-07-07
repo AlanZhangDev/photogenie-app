@@ -16,13 +16,14 @@ const postFilm = async(data) => {
     return res.json()
 }
 
-const deleteFilm = async(id) => {
+const deleteFilm = async(_id) => {
+    console.log(_id)
     const res = await fetch('http://localhost:5000/', {
         method: 'DELETE',
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({ "id": id })
+        body: JSON.stringify({ "_id": _id })
     })
     return res.json()
 }
@@ -34,13 +35,13 @@ const getSortFilms = async(sortType) => {
     return res.json()
 }
 
-const patchFilmPrice = async(id) => {
+const patchFilmPrice = async(_id) => {
     const res = await fetch('http://localhost:5000/', {
         method: 'PATCH',
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({ "id": id })
+        body: JSON.stringify({ "_id": _id })
     })
     return res.json()
 }

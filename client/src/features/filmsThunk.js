@@ -18,8 +18,8 @@ export const postFilmAsync = createAsyncThunk(
 
 export const deleteFilmAsync = createAsyncThunk(
     'DELETE_FILM',
-    async (id) => {
-        return await FilmService.deleteFilm(id)
+    async (_id) => {
+        return await FilmService.deleteFilm(_id)
     }
 )
 
@@ -32,7 +32,7 @@ export const getFilmsSortedAsync = createAsyncThunk(
 
 export const patchFilmPriceAsync = createAsyncThunk(
     'PUT_FILM_PRICE',
-    async (id) => {
-        return await FilmService.patchFilmPrice(id)
+    async (_id) => {
+        return await FilmService.patchFilmPrice(_id)
     }
 )

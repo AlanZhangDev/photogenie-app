@@ -39,7 +39,7 @@ const filmsSlice = createSlice({
         builder
             .addCase(deleteFilmAsync.fulfilled, (state, action) => {
                 state.films = state.films.filter((film) => {
-                    return film.id !== action.payload.id
+                    return film._id !== action.payload
                 })
                 state.amount -= 1
             })
@@ -51,7 +51,7 @@ const filmsSlice = createSlice({
         builder
             .addCase(patchFilmPriceAsync.fulfilled, (state, action) => {
                 state.films.forEach((film) => {
-                    if (film.id === action.payload.id) {
+                    if (film._id === action.payload._id) {
                         film.cost = 0.00
                     }
                 })

@@ -30,6 +30,13 @@ export const getFilmsSortedAsync = createAsyncThunk(
     }
 )
 
+export const getFilmsFilteredAsync = createAsyncThunk(
+    'GET_FILTERED_FILMS',
+    async (filterType) => {
+        return await FilmService.getFilterFilms(filterType)
+    }
+)
+
 export const patchFilmPriceAsync = createAsyncThunk(
     'PUT_FILM_PRICE',
     async (_id) => {

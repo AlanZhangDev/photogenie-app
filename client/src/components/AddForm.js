@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getFilmsSortedAsync, postFilmAsync } from "../features/filmsThunk";
-import { v4 as uuidv4 } from "uuid";
+import { getFilmsFilteredAsync, getFilmsSortedAsync, postFilmAsync } from "../features/filmsThunk";
 
 const AddForm = () => {
     const dispatch = useDispatch();
@@ -27,6 +26,11 @@ const AddForm = () => {
 
     const handleSort = (sortType) => {
         dispatch(getFilmsSortedAsync(sortType))
+    }
+
+    const handleFilter = () => {
+        let filterYear = new Date().getFullYear()
+        dispatch(getFilmsFilteredAsync(filterYear))
     }
 
     return (
@@ -67,6 +71,7 @@ const AddForm = () => {
                     <button type="button" onClick={() => handleSort("title-descending")} className="sort-by-button">Sort by Title (Z-A)</button>
                     <button type="button" onClick={() => handleSort("price-ascending")} className="sort-by-button">Sort by Price ($-$$$)</button>
                     <button type="button" onClick={() => handleSort("price-descending")} className="sort-by-button">Sort by Title ($$$-$)</button>
+                    <button type="button" onClick={() => handleFilter()} className="sort-by-button">Find Films This Year</button>
                 </div>
             </form>
         </div>

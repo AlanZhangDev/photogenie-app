@@ -35,6 +35,13 @@ const getSortFilms = async(sortType) => {
     return res.json()
 }
 
+const getFilterFilms = async(filterType) => {
+    const res = await fetch('http://localhost:5000/?filter=' + filterType, {
+        method: 'GET'
+    })
+    return res.json()
+}
+
 const patchFilmPrice = async(_id) => {
     const res = await fetch('http://localhost:5000/', {
         method: 'PATCH',
@@ -47,7 +54,7 @@ const patchFilmPrice = async(_id) => {
 }
 
 const FilmService = {
-    getFilms, postFilm, deleteFilm, getSortFilms, patchFilmPrice
+    getFilms, postFilm, deleteFilm, getSortFilms, patchFilmPrice, getFilterFilms
 }
 
 export default FilmService

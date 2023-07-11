@@ -1,7 +1,25 @@
 const Film = require('../model/Film')
 
 const getFilms = async (req, res) => {
-    const films = await Film.find()
+    const { sort } = req.query
+    const { filter } = req.query
+    let films = await Film.find()
+
+    if (sort === "title-ascending") {
+        films.sort((a, b) => a.name.localeCompare(b.name))
+    } else if (sort === "title-descending") {
+        films.sort((a, b) => a.name.localeCompare(b.name))
+        films.reverse()
+    } else if (sort === "price-ascending") {
+        films.sort((a, b) => parseFloat(a.cost) - parseFloat(b.cost))
+    } else if (sort === "price-descending") {
+        films.sort((a, b) => parseFloat(b.cost) - parseFloat(a.cost))
+    }
+
+    if (filter) {
+        films = await Film.find({ year: filter}).exec()
+    }
+
     res.json(films)
 }
 

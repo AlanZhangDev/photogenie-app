@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { deleteFilmAsync, getFilmsAsync, getFilmsSortedAsync, postFilmAsync, patchFilmPriceAsync } from "./filmsThunk";
+import { deleteFilmAsync, getFilmsAsync, getFilmsSortedAsync, postFilmAsync, patchFilmPriceAsync, getFilmsFilteredAsync } from "./filmsThunk";
 
 const initialState = {
     films: [],
@@ -55,6 +55,11 @@ const filmsSlice = createSlice({
                         film.cost = 0.00
                     }
                 })
+            })
+        builder
+            .addCase(getFilmsFilteredAsync.fulfilled, (state, action) => {
+                state.films = action.payload
+                state.amount = action.payload.length
             })
     }
 });

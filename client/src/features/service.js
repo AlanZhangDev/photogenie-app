@@ -1,12 +1,12 @@
 const getFilms = async() => {
-    const res = await fetch('http://localhost:5000/', {
+    const res = await fetch('https://photogenie.onrender.com/', {
         method: 'GET'
     })
     return res.json()
 }
 
 const postFilm = async(data) => {
-    const res = await fetch('http://localhost:5000/', {
+    const res = await fetch('https://photogenie.onrender.com/', {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
@@ -18,7 +18,7 @@ const postFilm = async(data) => {
 
 const deleteFilm = async(_id) => {
     console.log(_id)
-    const res = await fetch('http://localhost:5000/', {
+    const res = await fetch('https://photogenie.onrender.com/', {
         method: 'DELETE',
         headers: {
             "Content-Type": "application/json",
@@ -29,21 +29,21 @@ const deleteFilm = async(_id) => {
 }
 
 const getSortFilms = async(sortType) => {
-    const res = await fetch('http://localhost:5000/?sort=' + sortType, {
+    const res = await fetch('https://photogenie.onrender.com/?sort=' + sortType, {
         method: 'GET'
     })
     return res.json()
 }
 
 const getFilterFilms = async(filterType) => {
-    const res = await fetch('http://localhost:5000/?filter=' + filterType, {
+    const res = await fetch('https://photogenie.onrender.com/?filter=' + filterType, {
         method: 'GET'
     })
     return res.json()
 }
 
 const patchFilmPrice = async(_id) => {
-    const res = await fetch('http://localhost:5000/', {
+    const res = await fetch('https://photogenie.onrender.com/', {
         method: 'PATCH',
         headers: {
             "Content-Type": "application/json",

@@ -3,13 +3,13 @@ name: Testing
 on: [ push, pull_request ]
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-      - with:
+      - name: Use Node.js 18.12.1
+        uses: actions/setup-node@v3
+        with:
           node-version: 18.12.1
-          cache: 'npm'
       - run: npm install-server
       - run: npm test

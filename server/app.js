@@ -16,7 +16,10 @@ app.use('/', filmsRouter)
 
 mongoose.connection.once('open', () => {
     console.log("Successfully connected to MongoDB")
-    app.listen(5000, () => {
-        console.log("Server is listening on port 5000...")
-    })
 })
+
+let server = app.listen(5000, () => {
+    console.log("Server is listening on port 5000...")
+})
+
+module.exports = { app, server }

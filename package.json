@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cd server && npm install jest && jest",
+    "test": "cd server && npm install && npm test",
     "install-server": "cd server && npm install",
     "start-server": "cd server && node app.js",
     "install-client": "cd client && npm install",

@@ -11,5 +11,5 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18.12.1
-      - run: npm install-server
-      - run: npm test
+      - run: npm run install-server
+      - run: npm run test
